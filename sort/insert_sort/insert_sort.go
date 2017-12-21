@@ -32,7 +32,8 @@ func InsertSort(src []int) {
 		src[0] = src[i] //src[0]设置为监视哨
 
 		//前i-1个数都是由小到大的有序序列，只要监视哨监视的数（src[0]）比有序序列中当前比较的数（src[j]）小，就把这个数后移一位
-		for j = i - 1; j > 0 && src[0] < src[j]; j-- {
+		//for j = i - 1; j > 0 && src[0] < src[j]; j-- {
+		for j = i - 1; src[0] < src[j]; j-- {
 			src[j+1] = src[j] //后移
 		}
 		//监视哨监视的数(src[0])比有序序列中最大的数还大，直接在尾部插入
